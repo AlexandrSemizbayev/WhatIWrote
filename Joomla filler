@@ -1,0 +1,12 @@
+var descriptionValues = [
+        "values",
+        "we",
+        "need",
+        "to",
+        "add", 
+    ]
+for (var i = 0; i < descriptionValues.length; i++) {
+    $K2('#search-field').val(descriptionValues[i])
+    $K2('<li class="addedTag">' + $K2('#search-field').val() + '<span class="tagRemove" onclick="$K2(this).parent().remove();">&times;</span><input type="hidden" value="' + $K2('#search-field').val() + '" name="tags[]"></li>').insertBefore('.tags .tagAdd');
+    $K2('#search-field').val('');
+}
