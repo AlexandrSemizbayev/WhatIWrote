@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		*{
+			margin:0 auto;
+		}
+		.img-wr{
+			column-gap: 0px;
+			column-count: 4;
+		}
+		.image-wrapper{
+			break-inside: avoid-column;
+			-webkit-column-break-inside: avoid;
+			outline: 3px solid white;
+		}
+
+		.img{
+			height:300px;
+			object-fit: cover;
+		}
+	</style>
+
+
+</head>
+<body>
+	<div class="cont">
+		
+		<div class="img-wr">
+			<div class="image-wrapper"><img src="first.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="sec.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="third.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="fourth.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="fifth.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="sixth.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="seventh.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="sec.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="first.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="sec.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="third.jpg" alt="" class="img"></div>
+			<div class="image-wrapper"><img src="sixth.jpg" alt="" class="img"></div>
+			<!-- <div class="image-wrapper"><img src="third.jpg" alt="" class="img"></div> -->
+		</div>
+
+	</div>
+	<script>
+		window.onload=function(){
+		var img = document.querySelectorAll('.img');
+		for(var i=0;i<img.length;i++){
+			console.log(img[i].width,img[i].height)
+			if(img[i].width>img[i].height){
+				console.log('true')
+				img[i].style.width='149.5%';
+			} else {
+				img[i].style.width="100%";
+			}
+		}			
+		}
+
+	</script>
+</body>
+</html>
