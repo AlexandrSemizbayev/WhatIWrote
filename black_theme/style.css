@@ -40,17 +40,27 @@ body{
 }
 
 .block{
-    transition: transform 1s;
+    /*scroll-margin-top: 100vh;*/
+    /*scroll-padding:100vh;*/
+    /*scroll-margin-bottom: 100vh;*/
+    /*scroll-snap-align: start;*/
+    /*scroll-snap-stop: normal;*/
+    /*scroll-snap-type: y mandatory;*/
+    transition: transform 1s,opacity 2s;
 }
 
 .inherit{
     position:inherit;
+    /*opacity:0.5*/
+    transform: scale(.5);
 }
 
 .sticky{
     position:sticky !important;
     left:0;
     top:0;
+    opacity:1;
+    transform: scale(1);
 }
 
 header{
@@ -80,6 +90,8 @@ header{
     background-color: var(--gold-t);
     box-shadow:0px 0px 10px 5px var(--gold-t);
 }
+
+
 
 .cats{
     display:flex;
@@ -118,7 +130,36 @@ header{
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
+    position: relative;
 }
+
+.list-header{
+    position: absolute;
+    height: 100%;
+    right: 0;
+    min-width: 500%;
+    color: wheat;
+    font-family: "Montserrat";
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.list-header-each{
+    width: 150%;
+    padding: 10px 15px;
+    margin-left: -30px;
+    border: 1px solid #272727;
+    cursor:pointer;
+    transition: background-color .5s;
+}
+
+.list-header-each:hover{
+    background-color: #424242;
+    color:white;
+}
+
 
 .points{
     min-width: 15px;
@@ -128,7 +169,7 @@ header{
     border-radius:50%;
     z-index:5;
     border:2px solid transparent;
-    transition:box-shadow .5s;
+    transition:box-shadow .5s, margin .5s;
     cursor:pointer;
 }
 
@@ -307,14 +348,43 @@ header{
     background-image: url(./images/wa2.png);
 }
 
+
+                                                /*Vue transition block*/
+
+.list-header-enter-active,
+.list-header-leave-active{
+    transform:scale(1);
+    opacity:1;
+    transition:transform .5s,opacity 2s;
+}
+
+.list-header-enter,
+.list-header-leave-to{
+    transform:scale(0);
+    opacity:0;
+}
+
+                                                    /*End of Vue transition block*/
+
 @media screen and (max-width:1024px){
 
     .flex{
         flex-wrap:wrap;
     }
 
+    .image-each{
+        width:50%;
+    }
+
     .descr-left, .descr-right {
         width: 90%;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    .image-each{
+        width:90%;
     }
 }
 
@@ -328,7 +398,11 @@ header{
         font-size:3em;
     }
 
-
+    .points{
+        min-width: 25px;
+        max-width: 25px;
+        height: 25px;
+    }
 
     .flex{
         flex-wrap:wrap;

@@ -13,13 +13,24 @@
 <div class="container">
         <header>
             <div class="dot">
-                <div class="cats">
+                <div class="cats" @click="sandwich">
                     <div class="cats-line cats-top"></div>
                     <div class="cats-line cats-middle"></div>
                     <div class="cats-line cats-bottom"></div>
                 </div>
             </div>
+
+
+
             <div class="line">
+<transition name="list-header">
+                <div class="list-header" v-if="show">
+                    <div class="list-header-each" v-for="val in vals" @click="log($event)">
+                        {{val}}
+                    </div>
+                </div>
+</transition>
+
                 <div class="points"
                      @click="moveTo(0)"
                      :style="[currentPoint==0?
@@ -41,7 +52,10 @@
                 ></div>
             </div>
         </header>
-    <div class="first-block block sticky">
+
+
+
+    <div class="first-block block sticky" value="Вступление">
     <div class="background">
         <div class="background-image bgi first"></div>
     </div>
@@ -51,7 +65,7 @@
         <span class="text">Крутые идеи - крутые проекты</span>
     </div>
     </div>
-    <div class="second-block block">
+    <div class="second-block block inherit" value="Gallery">
         <span>grimeur</span>
         <div class="background">
             <div class="background-image bgi second"></div>
@@ -93,7 +107,7 @@
         </div>
     </div>
 
-    <div class="third-block block">
+    <div class="third-block block inherit" value="Description">
         <span>grimeur</span>
         <div class="background">
             <div class="background-image bgi second"></div>
