@@ -1,0 +1,98 @@
+<!-- No sense to part to .js .css .html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix???</title>
+    <style>
+    * {
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .screen {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .row {
+        position: absolute;
+        height: 200vh;
+        width: 15px;
+        color: green;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        top: -100vh;
+    }
+
+    .row>span {
+        text-shadow: 0px -10px 10px green;
+    }
+
+    @keyframes down {
+        from {
+            top: -200vh;
+        }
+
+        to {
+            top: 200vh;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+        <!-- empty container -->
+    </div>
+    <script>
+    let screen = document.querySelector('.screen'); //screen selector
+    let rowWidth = 0; //.row width
+    function getWidth() { //getting CSS propertys width of .row 
+        screen.innerHTML = '<div class="row"></div>'; //creating an empty Element
+        rowWidth = document.querySelector('.row').clientWidth; //getting Width and adding to variable rowWidth
+        document.querySelector('.row').remove(); //deleting empty Element
+    }
+    getWidth();
+    let rows = Math.floor(window.innerWidth / rowWidth); //number of rows to add , based on width of window and width of each row
+    let arr = [" ", "&#65410", "&#12791", "&#65428", "&#65431", "&#65411", " &#65388 ", "&#12696;", " ", " ", " ", " ", " ", " ", " ", " ", "&gamma;", "&delta;", "&epsilon;", "&zeta;", "&eta;", "&theta;", "&iota;", "&#12464", "&lambda;", "&mu;", "&nu;", "&xi;", "&omicron;", "&#12465", "&rho;", "&tau;", "&upsilon;", "&chi;", "&psi;", ]; //Array with symbols
+
+    function random() { //random numbers
+        return Math.floor(Math.random() * arr.length); //returns a random number in range of array length 
+    }
+    for (let i = 0; i < rows; i++) {
+        screen.innerHTML += `<div class="row" id="${i}" style="left:${i*rowWidth}px"></div>` //calculated indentation from left side of a window (position:absolute;)
+        var rowEach = document.querySelectorAll('.row'); //getting all .row Elements
+        var opacity = 0; //default opacity by start
+        for (let k = 0; k < 20; k++) {
+            if (random() <= arr.length) { //one more check see.comment in random()
+                rowEach[i].innerHTML += `<span class=each>${arr[random()]}</span`; //add an random character from array to .row > .each 
+            }
+        }
+        var fallDown = random() + 1; //fallDown animation duration
+        if (fallDown > 30) { //if bigger than 30 (falls pretty slow and need to hurry it)
+            fallDown = 20; //runtime reduce to 20 seconds
+        }
+        rowEach[i].style.animation = `down ease-in ${fallDown}s infinite`; //adding animation
+        for (let z = 0; z < rowEach[i].children.length; z++) { //add opacity to each span in row
+            if (opacity < 1) {
+                rowEach[i].children[z].style.opacity = opacity;
+                opacity += 0.1;
+            } else {
+                opacity = 0;
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>
