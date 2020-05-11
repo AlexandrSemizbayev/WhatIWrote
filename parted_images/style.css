@@ -1,0 +1,31 @@
+*{
+    margin:0 auto;
+    box-sizing:border-box;
+}
+
+#app{
+    width: 100%;
+}
+
+.image-wrap{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.image-part{
+    height: 100px;
+    width: 100px;
+    background-size:1000%;
+    transform:rotateX(90deg) rotateY(90deg);
+    transition:all 1s;
+}
+
+.unrotate{
+    transform:rotateX(0deg) rotateY(0deg) !important;
+}
+
+.unrotate:hover{
+    transform:rotateX(0deg) rotateY(0deg) scale(1.2) !important;
+    border-radius:5%;
+    z-index:1;
+}

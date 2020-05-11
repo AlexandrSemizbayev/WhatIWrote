@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../artlvl"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
