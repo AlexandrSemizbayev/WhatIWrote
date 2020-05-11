@@ -1,0 +1,19 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "Mein Lebenslauf",
+  "author": "Alexandr Semizbayev",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/firebase": "^5.2.0",
+    "firebase": "^7.14.2",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
