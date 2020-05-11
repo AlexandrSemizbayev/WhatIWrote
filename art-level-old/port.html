@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио</title>
+	<script src="vue.js"></script>
+	<!-- <script src="lax.js"></script> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="port.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<div class="logo-wrap">
+			<div class="logo">
+				<img src="images/logo.png" alt="Лого" class="logo-img">
+			</div>
+			<div class="side-line"></div>
+		</div>
+
+
+		<!-- <div class="bahandi-wrap" > -->
+			<div class="bahandi" @click="burger($event)">
+		<!-- </div>	 -->
+		</div>
+
+		<ul @click="ulClick($event)" ref="ul">
+			<li>Главная</li>
+			<li>Обо мне</li>
+			<li>Блог</li>
+			<li>Процесс</li>
+			<li>Социум</li>
+			<li>Контакты</li>
+		</ul>
+	</header>
+	<div class="whole-wrapper" v-scroll="handleScroll" ref="wrapper">
+		<div class="first-wrapper">
+			<div class="inner-wrapper"></div>
+			<div class="central-block">
+				<!-- <div class="central-left-side"> -->
+
+				<!-- <div class="general-pic square bgi"> -->
+				<div class="descr-left-top square">
+					<h2>We are best</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, itaque ipsa voluptas quam accusantium cupiditate nesciunt voluptates mollitia ab eius?</p>
+				</div>
+				<div class="descr-left-bottom square">
+					<span class="header-span">1.</span>
+					<span class="page-span">Начало</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis rem odit praesentium? Pariatur odio quisquam sequi. Exercitationem aliquid, assumenda unde!</p>
+				</div>
+				<!-- </div> -->
+				<!-- <div class="central-right-side"> -->
+				<div class="general-pic square bgi"></div>
+				<div class="sec-pic square bgi"></div>
+			<!-- </div> -->
+			</div>
+		</div>
+		
+
+
+
+
+
+
+
+
+		<div class="second-wrapper">
+			<h2 class="header-text">ПОЧЕМУ,</h2>
+			<h3 class="descr-text">нужно выбрать именно меня?</h3>
+			<div class="about-me">
+				<div class="left-block">
+					<h3>Фичи</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quia tenetur ipsam amet excepturi mollitia.</p>
+				</div>
+				<div class="divider"></div>
+				<div class="right-block">
+					<h3>Обо мне</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quia tenetur ipsam amet excepturi mollitia.</p>
+				</div>
+			</div>
+		</div>
+		<div class="third-wrapper">
+			<div class="page-2">
+				<div class="page-2-gen-pic bgi"></div>
+				<div class="page-2-center">
+					<div class="num-rotated">
+						<span>
+							2.
+						</span>
+					</div>
+					<div class="center-left square bgi"></div>
+
+
+
+
+					<div class="center-wrap">
+
+
+
+					<div class="center square">
+						<h2>We are best</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, itaque ipsa voluptas quam accusantium cupiditate nesciunt voluptates mollitia ab eius?</p>
+					</div>
+
+
+					</div>
+
+
+					<div class="center-right square bgi"></div>
+				</div>
+				<div class="descr" ref="descr">
+					<div class="close" @click="close($event)"></div>
+					<h3>Lorem ipsum dolor.</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ipsa ducimus rem, natus quibusdam inventore vero esse est a ipsam modi ullam nobis quae, praesentium voluptatum perferendis consequatur, vitae dolor odio deserunt doloribus incidunt voluptates! Aut nobis repellat doloremque ex.</p>
+				</div>
+
+<div class="page-2-more button" @click="show($event)">
+	
+					<span>
+						Рассказывайте...
+					</span>
+				</div>
+
+
+			</div>
+
+		</div>
+
+
+		<div class="fourth-wrapper">
+			<div class="steps bgi">
+
+
+				<div class="num-rotated">
+						<span>
+							3.
+						</span>
+					</div>
+
+				<h2>
+					Как все происходит?
+				</h2>
+				<h3>
+					Рассказываем пошагово:
+				</h3>
+				<div class="steps-more button">
+					<span>
+						Рассказывайте...
+					</span>
+				</div>
+
+				<div class="about-me">
+					<div class="left-block">
+						<h3>Подготовка</h3>
+					<p>Для идеальной съемки важно огромное количество деталей : от времени съемки и цвета тоналки до спанч-боба (расценивайте как хотите)</p>
+					</div>
+					<div class="divider"></div>
+					<div class="center-block">
+						<h3>Съемка</h3>
+					<p>
+					Камера, мотор,экшн... Не наш вариант! В нашем случае, при закрытии глаз мы можем представить лес и щелкающего дятла где-то поблизости. <span class="attention"><b>Внимание!</b> Фотограф дятлом не является и является лишь метафорой!
+					</span>
+					</p>
+					</div>
+					<div class="divider"></div>
+					<div class="right-block">
+						<h3>А потом</h3>
+					<p>
+						А потом Photoshop с Лайтом... Ретушер сидит крутясь на стуле , полу , диване , потолке ( 
+						<span class="attention">
+						*прим.автора - редкий случай
+						</span> ).
+						После чего, со словами " я сделяль ", он гордо вручает Вам материал (
+						)
+					</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fifth-wrapper">
+
+
+			<div class="num-rotated">
+				<span>
+					4.
+				</span>
+			</div>
+
+
+
+		<div class="testimonials">
+			
+
+
+			
+
+			<div class="testimonials-bg bgi"></div>
+
+				<h2>
+					А где отзывы?
+				</h2>
+				<h3>
+					В старых добрых социалочках &#x1F60A
+				</h3>
+
+				<div class="about-me">
+					<div class="left-block">
+						<h3>Василий</h3>
+					<p>
+						Съемка была проведена на высшем уровне! Ну прям действительно на высшем уровне самого высокого здания в нашем городе!
+					</p>
+					</div>
+					<div class="divider"></div>
+					<div class="right-block">
+						<h3>Алексей</h3>
+					<p>
+						Крутость фотографий = ( профессионализм * время ) + креативность<sup>2</sup>
+					</p>
+					</div>
+				</div>
+
+			<div class="social-underline">
+				<a href="facebook.com" class="social fb bgi"></a>
+				<a href="instagram.com" class="social inst bgi"></a>
+				<a href="vk.com" class="social vk bgi"></a>
+				<a href="youtube.com" class="social youtube bgi"></a>
+			</div>
+
+			</div>
+		</div>
+
+
+		<div class="sixth-wrapper">
+			<h2>Как связаться?</h2>
+			<div class="address">
+				<div class="email">
+					<div class="icon"></div>
+					<div class="email-block">
+
+					<h4>EMAIL</h4>
+					<a href="mailto:bayernummer1@gmail.com">bayernummer1@gmail.com</a>
+
+					</div>
+				</div>
+				<div class="call">
+					<div class="icon"></div>
+					<div class="phone-block">
+					<h4>Телефон</h4>
+					<a href="tel:77714621956">+77714621956</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		</div>
+		</div>
+		<script src="script.js"></script>
+</body>
+</html>
