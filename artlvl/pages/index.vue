@@ -58,9 +58,9 @@ export default {
     return {
       showed:false,
       catsList:{},
-      port:false,          //TODO CHANGE IN PROD
-      list:false,          //TODO CHANGE IN PROD
-      allowPage:false,      //TODO CHANGE IN PROD
+      port:false,          
+      list:false,          
+      allowPage:false,     
       allowFront:false,
       front:{
         first:{
